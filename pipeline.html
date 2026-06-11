@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分析流水线 · Serenity-A</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">Serenity‑A <span class="badge">v1.0</span></div>
+  <div class="navbar-links">
+    <a href="#" data-page="index">首页</a>
+    <a href="#" data-page="framework">方法论</a>
+    <a href="#" data-page="mapping">美股映射</a>
+    <a href="#" data-page="pipeline" class="active">流水线</a>
+    <a href="#" data-page="a-dims">A股维度</a>
+    <a href="#" data-page="reports">报告标准</a>
+  </div>
+  <button class="navbar-toggle">☰</button>
+</nav>
+
+<div class="page active" id="pipeline">
+  <div class="hero" style="padding-bottom:24px;margin-bottom:32px;">
+    <h1>12 步分析流水线</h1>
+    <p class="subtitle">从 Scope Gate 到独立复核，完整闭环的分析流程。每一步都有明确的输入、处理和输出。</p>
+  </div>
+
+  <!-- Flow overview -->
+  <div class="flow">
+    <span class="flow-step">① Scope Gate</span><span class="flow-arrow">→</span>
+    <span class="flow-step">② 锁周期+终端</span><span class="flow-arrow">→</span>
+    <span class="flow-step">③ 画供应链栈</span><span class="flow-arrow">→</span>
+    <span class="flow-step">④ 钻卡点</span><span class="flow-arrow">→</span>
+    <span class="flow-step">⑤ 判据</span><span class="flow-arrow">→</span>
+    <span class="flow-step">⑥ 红旗</span>
+  </div>
+  <div class="flow" style="margin-top:0;">
+    <span class="flow-step">⑦ 估值</span><span class="flow-arrow">→</span>
+    <span class="flow-step">⑧ 催化剂</span><span class="flow-arrow">→</span>
+    <span class="flow-step">⑨ 交叉验证</span><span class="flow-arrow">→</span>
+    <span class="flow-step">⑩ 美股映射</span><span class="flow-arrow">→</span>
+    <span class="flow-step">⑪ 综合判定</span><span class="flow-arrow">→</span>
+    <span class="flow-step" style="border-color:var(--accent);color:var(--accent);">⑫ 独立复核</span>
+  </div>
+
+  <h2>流程详解</h2>
+
+  <div class="steps">
+    <div class="step-item">
+      <h4>Scope Gate — 范围界定</h4>
+      <p>用户需求模糊时最多问 3 个短问题锁定范围：超级趋势 = AI 基础设施建设（任意细分都跑）；周期 = 6-18 个月；地域 = A 股。默认不追问 AI 赛道以外的话题。</p>
+    </div>
+    <div class="step-item">
+      <h4>锁周期 + 终端</h4>
+      <p>它在这个 supercycle 的什么位置？落到具体的产品/技术路径：光模块 400G→800G→1.6T？算力 NVDA GB300 还是国产算力？机器人 Optimus 量产还是国产人形？<strong>只追结构性周期，不追单日新闻。</strong></p>
+      <p style="color:var(--text-dim);font-size:12px;margin-top:4px;">关键问题：这一层明天停产，下游要等多久恢复？</p>
+    </div>
+    <div class="step-item">
+      <h4>画供应链栈 + 多跳映射</h4>
+      <p>画 5-9 层栈（终端 → 系统 → 模组 → 器件 → 芯片 → 材料/衬底），顺已知供货关系逐跳上溯。用 OSINT 线索（官网供应商增减/CFO 失言/生态 PPT/RFQ/投资 deck）推断未公开关系。</p>
+      <div style="margin-top:8px;background:var(--surface2);border-radius:6px;padding:12px 16px;font-size:12px;font-family:monospace;line-height:1.8;">
+        L6 终端 → L5 系统 → L4 模组 → L3 器件 → L2 芯片 → L1 衬底 → L0 原料<br>
+        <span style="color:var(--text-dim);">每一跳标证据等级：已证实 / OSINT 推断 / 推测</span>
+      </div>
+    </div>
+    <div class="step-item">
+      <h4>钻"卡点中的卡点"</h4>
+      <p>继续往最底层钻：模组 → 器件 → 芯片 → 材料/原料。越往下越可能是 single point of failure。叠加地缘单卡（如中国控约 70% 的铟）= 材料 + 地缘双卡，最强卡点。</p>
+      <p style="color:var(--text-dim);font-size:12px;margin-top:4px;">不能只看一层——InP 衬底既要铟（中国控~70%）又要高纯磷前驱体，两条独立垄断链各自是 single point of failure。</p>
+    </div>
+    <div class="step-item">
+      <h4>好卡点判据</h4>
+      <p>用 14 条好卡点判据逐一核对当前标的/环节，命中越多信念越高。详见<a href="#" onclick="showPage('framework')">方法论页面</a>。</p>
+    </div>
+    <div class="step-item">
+      <h4>红旗扫描</h4>
+      <p>用 12 条红旗逐一扫描，命中即降级/否决。A 股特有红旗：大股东减持、解禁、监管风险、商誉过高。详见<a href="#" onclick="showPage('framework')">方法论页面</a>。</p>
+    </div>
+    <div class="step-item">
+      <h4>估值</h4>
+      <p>先判类型（高成长卡点型 / 周期反转型 / 深价值型）再套尺子，输出 Bear / Base / Bull 三档。含精度降级规则——含推断假设的区间降为"数量级/方向"。</p>
+    </div>
+    <div class="step-item">
+      <h4>催化剂时点</h4>
+      <p>A 股催化剂清单：北向资金持续流入、机构调研频率、产业政策、财报季、大厂新品（GTC/OFC）、限售解禁前后、龙虎榜（游资/机构动向）、股东户数趋势。</p>
+    </div>
+    <div class="step-item">
+      <h4>证据交叉验证</h4>
+      <p>数源分类：<code>已证实</code> / <code>管理层声称</code> / <code>推断</code> / <code>推测</code>。关键数据必须有一手源（10-K/10-Q/公告），聚合站/博客只作线索。多源交叉：公司财报 > 行业数据 > 产业报道 > 卖方研报 > 社交贴。</p>
+    </div>
+    <div class="step-item">
+      <h4>美股→A股映射分析（按需/自动）</h4>
+      <p>当分析涉及 AI/半导体/光通信等全球供应链共通的板块时自动激活。分析四维度：情绪映射（短）、估值锚定（中）、订单传导（长）、竞争格局（不定期）。</p>
+    </div>
+    <div class="step-item">
+      <h4>综合判定</h4>
+      <p>值不值得 = 卡点强度 × 错杀程度 × 证据成色 × 催化剂时点 × 红旗 × 所处周期。</p>
+      <p><strong>方向性定档：</strong>Strong Buy / Buy / Hold / Sell。（A 股不设 Fire Sale，因受涨跌停限制）</p>
+    </div>
+    <div class="step-item" style="border-color:var(--accent);">
+      <h4>独立复核（必做，不可跳过）</h4>
+      <p>给用户最终回复之前，派独立 reviewer（全新上下文，sub-agent 模式）挑刺：查取数、查逻辑、查偏误、查发现、查可读性。裁决 pass / revise。无 sub-agent 环境降级：显式说明 + 联网重核 ≥3 关键数字 + 标 <code>[未独立复核]</code>。</p>
+    </div>
+  </div>
+
+  <h2>实际分析中对比例</h2>
+  <p style="margin-bottom:4px;">今年 5 月一篇针对光模块的推演，流水线如何逐层钻探：</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>步骤</th><th>光模块示例</th></tr></thead>
+    <tbody>
+      <tr><td>Scope Gate</td><td>超级趋势=AI基建；周期=1.6T 放量中段；A股</td></tr>
+      <tr><td>锁终端</td><td>NVDA GB300 → 1.6T 光模块需求 10x</td></tr>
+      <tr><td>画栈</td><td>AI推理→交换机→光模块→EML/InP→衬底→铟原料</td></tr>
+      <tr><td>钻卡点</td><td>InP 衬底缺口 70% → 最硬卡点</td></tr>
+      <tr><td>判据</td><td>命中 6 条：垄断/小市值vs大TAM/designed-in/demand>>supply/国产替代/原料受制</td></tr>
+      <tr><td>红旗</td><td>无红旗</td></tr>
+      <tr><td>估值</td><td>Base: 1.6T 1000万只 → ~200亿营收 → 合理</td></tr>
+      <tr><td>美股映射</td><td>NVDA capex +60% → A 股光模块需求弹性推算</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-danger">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>框架适用边界：</strong>该流水线仅适用于有可追溯实体供应链的硬件/制造业公司。纯软件/宏观择时/纯概念不硬套。大市值（&gt;500亿）已充分覆盖的标的，框架判断力弱，只给卡点定性不给买点。
+    </div>
+  </div>
+
+  <div class="footer">
+    Serenity-A · 仅用于学习研究，不构成投资建议
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>报告标准 · Serenity-A</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">Serenity‑A <span class="badge">v1.0</span></div>
+  <div class="navbar-links">
+    <a href="#" data-page="index">首页</a>
+    <a href="#" data-page="framework">方法论</a>
+    <a href="#" data-page="mapping">美股映射</a>
+    <a href="#" data-page="pipeline">流水线</a>
+    <a href="#" data-page="a-dims">A股维度</a>
+    <a href="#" data-page="reports" class="active">报告标准</a>
+  </div>
+  <button class="navbar-toggle">☰</button>
+</nav>
+
+<div class="page active" id="reports">
+  <div class="hero" style="padding-bottom:24px;margin-bottom:32px;">
+    <h1>报告标准 &amp; 输出规范</h1>
+    <p class="subtitle">单股 11 步报告结构 · 赛道 7 步报告结构 · 7 条证据规则 · 6 项独立复核</p>
+  </div>
+
+  <h2>单股报告结构</h2>
+  <div class="steps">
+    <div class="step-item">
+      <h4>一句话结论（thesis）</h4>
+      <p>卡点类型 + 空间 + 方向性判定 + 因由。第一句就告诉用户"这是什么型、值不值得、为什么"。</p>
+    </div>
+    <div class="step-item">
+      <h4>事实底座</h4>
+      <p>业务拆分/各占比、市值/股本、营收/毛利/净利、backlog/订单、客户集中度与点名客户、现金/债务。<strong>每个数配一句"意味着什么"</strong>（中性，帮非专业读者读懂）。</p>
+    </div>
+    <div class="step-item">
+      <h4>供应链定位</h4>
+      <p>它在产业链哪一层、上下游谁、为什么这层是卡点。用一段讲清产业逻辑，不标"依据谁的框架"。不在 AI 链就直说在哪条链。</p>
+    </div>
+    <div class="step-item">
+      <h4>逆向链显形</h4>
+      <p>画出"下游 AI capex 锚点 → 第1跳 → 第2跳 → … → 本标的"的完整供应链上溯链。<strong>每一跳标证据等级</strong>（已证实供货关系 / OSINT 推断 / 纯推测）。Alpha 在这一步。</p>
+    </div>
+    <div class="step-item">
+      <h4>卡点判断</h4>
+      <p>用大白话点明命中哪几条好卡点判据、踩哪条红旗——不是只甩"已 re-rate"的断言。</p>
+    </div>
+    <div class="step-item">
+      <h4>估值</h4>
+      <p>先判类型再套尺子 → Bear/Base/Bull 三档，每档绑死假设。含精度降级规则。</p>
+    </div>
+    <div class="step-item">
+      <h4>A股特殊维度</h4>
+      <p>北向/解禁/龙虎榜/两融/筹码结构（按需，有数据就给）</p>
+    </div>
+    <div class="step-item">
+      <h4>美股映射</h4>
+      <p>情绪/估值/订单/竞争格局四维分析（按需，AI 供应链标的原则上必做）</p>
+    </div>
+    <div class="step-item">
+      <h4>催化剂时点</h4>
+      <p>财报/会议/政策/解禁/指数纳入——区分"会不会发生"和"何时发生"。</p>
+    </div>
+    <div class="step-item">
+      <h4>证伪门</h4>
+      <p><strong>什么会推翻这个 thesis。</strong>强制输出，即使没问。这才是防御确认偏误的最强武器。</p>
+    </div>
+    <div class="step-item" style="border-color:var(--accent);">
+      <h4>综合判定</h4>
+      <p>Strong Buy / Buy / Hold / Sell + 独立复核结果。不要含糊的"各有优劣"。</p>
+      <p style="color:var(--text-dim);font-size:12px;margin-top:4px;">*大市值已无不对称时，显式声明"框架判断力弱，只给卡点定性不给买点"</p>
+    </div>
+  </div>
+
+  <h2>赛道/板块报告结构</h2>
+  <div class="steps">
+    <div class="step-item">
+      <h4>赛道判定</h4>
+      <p>这条链值不值得在上面找仓位 + 处周期哪段 + 卡点在哪层。按时间维度拆"近端已定价 vs 远端未开闸"。</p>
+    </div>
+    <div class="step-item">
+      <h4>先看懂这条链（科普层）</h4>
+      <p>用大白话讲清——这东西是什么、解决什么旧问题、为什么现在突然重要、里面有哪几个环节。别假设读者懂专业术语。</p>
+    </div>
+    <div class="step-item">
+      <h4>供应链栈分层图</h4>
+      <p>L0→L5 各层：角色 + 代表标的及实时市值 + 卡点强度 + 发现状态（未发现/已 re-rate/过度炒作）。</p>
+    </div>
+    <div class="step-item">
+      <h4>卡点层定位</h4>
+      <p>哪几层是真 single point of failure，哪几层已被充分定价。</p>
+    </div>
+    <div class="step-item">
+      <h4>剩余不对称在哪</h4>
+      <p>按"市值/TAM × 上游程度 × 离放量 × 是否已被发现"排序。这是赛道报告的核心交付。不堆"谁怎么看"。</p>
+    </div>
+    <div class="step-item">
+      <h4>催化剂 / 先行信号</h4>
+      <p>上游原料现货价 / 相邻公司财报 / 资本动作 / 政策 / 时间线节点。</p>
+    </div>
+    <div class="step-item">
+      <h4>红旗 / 证伪 / 边界</h4>
+      <p>什么会推翻整条 thesis；哪些层是陷阱。这是"剩余不对称地图"不是买点——真要建仓对单股再跑全流程。</p>
+    </div>
+  </div>
+
+  <h2>证据规则 &amp; 取数纪律（7条）</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:40px">#</th><th>规则</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>一手源优先</strong></td><td>财务数据取最新财报/公告原值，标 as-of 日期。聚合站/博客/搜索摘要只作线索，不当结论。</td></tr>
+      <tr><td>2</td><td><strong>虚构守门</strong></td><td>先在财报/公告尽力找一手源。找到标 <code>已证实</code>；找不到标 <code>[推断]</code>/<code>[推测]</code>。绝不无源硬标已证实。</td></tr>
+      <tr><td>3</td><td><strong>定性/数字分轨</strong></td><td>推断的供货关系可进定性判断（卡点定位），但不得用于抬高份额/bull 估值。</td></tr>
+      <tr><td>4</td><td><strong>时效守门</strong></td><td>快变字段（订单/客户/市值）搜 as-of 前 ~60 天的最新数据。不可用过期财报数。</td></tr>
+      <tr><td>5</td><td><strong>多源交叉</strong></td><td>公司财报 &gt; 行业数据 &gt; 产业报道 &gt; 卖方研报 &gt; 社交贴。</td></tr>
+      <tr><td>6</td><td><strong>精度降级</strong></td><td>含 ≥1 个 <code>[推断]</code>/<code>[推测]</code> 的区间 → 降为"数量级/方向"，不给假精确。</td></tr>
+      <tr><td>7</td><td><strong>诚实门</strong></td><td>无可信对标 / 太早期不确定 → 直接说，不编造。</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>独立复核（6项检查）</h2>
+  <p style="margin-bottom:4px;">给用户最终回复<strong>之前</strong>派独立 reviewer（全新上下文，sub-agent，与做分析的模型不是同一个）复核。</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:40px">#</th><th>检查项</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>查取数</strong></td><td>每个可度量数字有没有一手源？独立联网重核 ≥3 个关键数字。专盯五类：二手数据、虚构关系、快变字段过期、重大遗漏、交叉核对。</td></tr>
+      <tr><td>2</td><td><strong>查逻辑</strong></td><td>卡点判定/判据/红旗/估值尺子用对没？结论与事实自洽吗？bear/base/bull 自洽吗？含推断假设的按精度降级了没？</td></tr>
+      <tr><td>3</td><td><strong>查偏误</strong></td><td>结论是否迎合用户倾向或叙事热度？按框架不成立就说不成立。用户原话有方向性暗示时反向加压。</td></tr>
+      <tr><td>4</td><td><strong>查发现</strong></td><td>逆向链是否显形？有没有真发现（至少一跳是市场/卖方尚未普遍映射的）？还是只把公开信息抄了一遍？</td></tr>
+      <tr><td>5</td><td><strong>查可读性</strong></td><td>有英文黑话/英式句法/内部代号外泄/加粗泛滥（>25处）？命中即摘出具体句子 + 给自然中文改写。</td></tr>
+      <tr><td>6</td><td><strong>裁决</strong></td><td>Pass（通过）/ Revise（列出具体问题 + 纠正值）。复核没过别硬发——宁可标 <code>[未核实]</code> 或降低信念档。</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>无 sub-agent 环境降级路径：</strong>无法起独立 reviewer 时绝不假装跑过、绝不把自查冒充独立复核。降级为：(1) 向用户显式说明复核已降级；(2) 自己联网重核 ≥3 个关键数字；(3) 标 <code>[未独立复核]</code> 或主动降一档信念档。
+    </div>
+  </div>
+
+  <h2>输出规范红线</h2>
+  <div class="card-grid">
+    <div class="card" style="border-color:var(--red);">
+      <div class="card-icon">🚫</div>
+      <h4>不是投资建议</h4>
+      <p>是复刻分析逻辑供学习/参考。真金白银自己 DYOR。</p>
+    </div>
+    <div class="card" style="border-color:var(--red);">
+      <div class="card-icon">✏️</div>
+      <h4>不编造</h4>
+      <p>他没说过的具体 call/数字不虚构。能力圈外诚实说"this isn't my lane"。</p>
+    </div>
+    <div class="card" style="border-color:var(--gold);">
+      <div class="card-icon">🎯</div>
+      <h4>不附和，给真判断</h4>
+      <p>按框架不成立就说不成立，挑战用户弱前提。优先级高于模仿语气。</p>
+    </div>
+    <div class="card" style="border-color:var(--accent);">
+      <div class="card-icon">📖</div>
+      <h4>中文表达规范</h4>
+      <p>术语按规则处理（保留/首次翻译/直接译），禁英式句法，禁生造黑话。加粗控制在 ~25 处以内。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Serenity-A · 仅用于学习研究，不构成投资建议
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

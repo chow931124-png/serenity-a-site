@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股→A股映射 · Serenity-A</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">Serenity‑A <span class="badge">v1.0</span></div>
+  <div class="navbar-links">
+    <a href="#" data-page="index">首页</a>
+    <a href="#" data-page="framework">方法论</a>
+    <a href="#" data-page="mapping" class="active">美股映射</a>
+    <a href="#" data-page="pipeline">流水线</a>
+    <a href="#" data-page="a-dims">A股维度</a>
+    <a href="#" data-page="reports">报告标准</a>
+  </div>
+  <button class="navbar-toggle">☰</button>
+</nav>
+
+<div class="page active" id="mapping">
+  <div class="hero" style="padding-bottom:24px;margin-bottom:32px;">
+    <h1>美股→A股映射分析</h1>
+    <p class="subtitle">保留美股 AI 龙头对 A 股映射标的的情绪传导、估值锚定、订单传导和竞争格局影响分析。<strong style="color:var(--accent);">这是本引擎的独特模块。</strong></p>
+  </div>
+
+  <h2>锚点映射表</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>美股锚点</th><th>角色</th><th>A股映射标的</th><th>传导机制</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:var(--green);">NVDA</strong></td>
+        <td>AI 算力核心</td>
+        <td><strong>中际旭创</strong>(300308)、<strong>天孚通信</strong>(300394)、<strong>沪电股份</strong>(002463)、<strong>胜宏科技</strong>(300476)、工业富联(601138)、中科曙光(603019)</td>
+        <td>capex → 光模块订单 → PCB → 服务器</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--accent);">AVGO</strong></td>
+        <td>网络 / 定制 AI 芯片</td>
+        <td>光模块整体(300308/300502/300394)、交换机相关</td>
+        <td>网络架构升级 → 光互联需求</td>
+      </tr>
+      <tr>
+        <td><strong>COHR / LITE</strong></td>
+        <td>光通信器件</td>
+        <td>光模块/光芯片(688313/688017)</td>
+        <td>技术路线对标 → 竞争格局变化</td>
+      </tr>
+      <tr>
+        <td><strong>MRVL / CIEN</strong></td>
+        <td>数据中心网络</td>
+        <td>交换机、光互联相关</td>
+        <td>网络带宽升级驱动</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--gold);">TSLA</strong></td>
+        <td>机器人 / 汽车</td>
+        <td><strong>绿的谐波</strong>(688017)、<strong>鸣志电器</strong>(603728)、三花智控(002050)</td>
+        <td>Optimus → 国产机器人供应链</td>
+      </tr>
+      <tr>
+        <td><strong>AMD</strong></td>
+        <td>AI 芯片第二极</td>
+        <td>国产算力链（海光信息/寒武纪）</td>
+        <td>竞争格局 → 替代逻辑</td>
+      </tr>
+      <tr>
+        <td><strong>MU / WDC</strong></td>
+        <td>存储</td>
+        <td>兆易创新、北京君正等</td>
+        <td>HBM → 存储周期</td>
+      </tr>
+      <tr>
+        <td><strong>VRT / VRTX</strong></td>
+        <td>电力 / 液冷散热</td>
+        <td>高澜股份、英维克、申菱环境</td>
+        <td>AI 数据中心散热需求</td>
+      </tr>
+      <tr>
+        <td><strong>AAPL</strong></td>
+        <td>消费电子</td>
+        <td>立讯精密(002475)、歌尔股份(002241)、鹏鼎控股</td>
+        <td>消电周期 → 供应链备货</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>四大分析维度</h2>
+  <div class="card-grid">
+    <div class="card" style="border-color:var(--accent);">
+      <div style="font-size:20px;margin-bottom:4px;">📈</div>
+      <h4>情绪映射</h4>
+      <span class="severity severity-high" style="margin-bottom:8px;display:inline-block;">短周期 · 1-5天</span>
+      <p>美股龙头单日 &gt;5% 涨跌 → A 股映射标的次日同向波动概率。判定：历史相关性、当前市场情绪、市值大小（小票更容易跟风）。</p>
+      <p style="color:var(--text-dim);font-size:12px;"><strong>输出例：</strong>"NVDA +8% → 次日中际旭创历史跟涨概率 ~70%"</p>
+    </div>
+    <div class="card" style="border-color:var(--gold);">
+      <div style="font-size:20px;margin-bottom:4px;">💰</div>
+      <h4>估值锚定</h4>
+      <span class="severity severity-mid" style="margin-bottom:8px;display:inline-block;">中周期 · 1-3月</span>
+      <p>美股环节 PE/PS 估值区间 → A 股同环节空间对标。考虑 A 股折价/溢价因子（光模块通常比美股折价 30-50%）。</p>
+      <p style="color:var(--text-dim);font-size:12px;"><strong>输出例：</strong>"AVGO 网络 25x PE → 中际旭创估值 gap 约 40%"</p>
+    </div>
+    <div class="card" style="border-color:var(--green);">
+      <div style="font-size:20px;margin-bottom:4px;">📦</div>
+      <h4>订单传导</h4>
+      <span class="severity severity-hard" style="margin-bottom:8px;display:inline-block;">长周期 · 3-12月</span>
+      <p>NVDA capex 指引 → 光模块/PCB/散热需求定量推算。关键事件：GTC、财报电话会、供应链备货信号。</p>
+      <p style="color:var(--text-dim);font-size:12px;"><strong>输出例：</strong>"capex +60% → 1.6T 光模块需求弹性 ~2x"</p>
+    </div>
+    <div class="card" style="border-color:var(--purple);">
+      <div style="font-size:20px;margin-bottom:4px;">🏢</div>
+      <h4>竞争格局</h4>
+      <span class="severity severity-mid" style="margin-bottom:8px;display:inline-block;">不定期</span>
+      <p>美股公司并购/技术突破 → A 股同行竞争或利好。如 AVGO 收购导致份额集中，A 股独立供应商反而更稀缺。</p>
+      <p style="color:var(--text-dim);font-size:12px;"><strong>输出例：</strong>"AVGO 整合完成 → A 股光模块独立性逻辑增强"</p>
+    </div>
+  </div>
+
+  <h2>传导链可视化</h2>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:16px 0 24px;font-size:13px;line-height:2.2;">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 4px;">
+      <span style="background:var(--green-bg);color:var(--green);padding:4px 12px;border-radius:4px;font-weight:600;">NVDA</span>
+      <span style="color:var(--text-dim);">→</span>
+      <span style="background:var(--accent-bg);color:var(--accent);padding:4px 12px;border-radius:4px;">Capex ↑60%</span>
+      <span style="color:var(--text-dim);">→</span>
+      <span style="background:var(--gold-bg);color:var(--gold);padding:4px 12px;border-radius:4px;">1.6T 需求 10x</span>
+      <span style="color:var(--text-dim);">→</span>
+      <span style="background:var(--surface2);padding:4px 12px;border-radius:4px;border:1px solid var(--border);">中际旭创</span>
+      <span style="color:var(--text-dim);">+</span>
+      <span style="background:var(--surface2);padding:4px 12px;border-radius:4px;border:1px solid var(--border);">天孚通信</span>
+      <span style="color:var(--text-dim);">+</span>
+      <span style="background:var(--surface2);padding:4px 12px;border-radius:4px;border:1px solid var(--border);">沪电股份</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 4px;margin-top:12px;">
+      <span style="background:var(--green-bg);color:var(--green);padding:4px 12px;border-radius:4px;font-weight:600;">TSLA</span>
+      <span style="color:var(--text-dim);">→</span>
+      <span style="background:var(--accent-bg);color:var(--accent);padding:4px 12px;border-radius:4px;">Optimus 量产</span>
+      <span style="color:var(--text-dim);">→</span>
+      <span style="background:var(--gold-bg);color:var(--gold);padding:4px 12px;border-radius:4px;">谐波减速器需求</span>
+      <span style="color:var(--text-dim);">→</span>
+      <span style="background:var(--surface2);padding:4px 12px;border-radius:4px;border:1px solid var(--border);">绿的谐波</span>
+      <span style="color:var(--text-dim);">+</span>
+      <span style="background:var(--surface2);padding:4px 12px;border-radius:4px;border:1px solid var(--border);">鸣志电器</span>
+    </div>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">💡</div>
+    <div class="callout-body">
+      <strong>使用规则：</strong>分析 A 股 AI 供应链标的时自动判断是否需要激活映射分析。有全球供应链关联（光模块/PCB/散热）→ 必做；纯内需（信创/军工AI）→ 选择性做。输出位置：单股报告中放在"催化剂"之后、"综合判定"之前。
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>映射不等于跟风。</strong>情绪映射是短周期信号，订单传导才是结构性逻辑。不要看到 NVDA 涨了就去追 A 股映射标的——要看涨的原因是否传导到供应链的对应环节。
+    </div>
+  </div>
+
+  <div class="footer">
+    Serenity-A · 仅用于学习研究，不构成投资建议
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

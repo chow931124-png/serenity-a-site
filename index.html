@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity-A · A股供应链卡点逆向投资分析</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">Serenity‑A <span class="badge">v1.0</span></div>
+  <div class="navbar-links">
+    <a href="#" data-page="index" class="active">首页</a>
+    <a href="#" data-page="framework">方法论</a>
+    <a href="#" data-page="mapping">美股映射</a>
+    <a href="#" data-page="pipeline">流水线</a>
+    <a href="#" data-page="a-dims">A股维度</a>
+    <a href="#" data-page="reports">报告标准</a>
+  </div>
+  <button class="navbar-toggle" aria-label="菜单">☰</button>
+</nav>
+
+<!-- PAGE: index -->
+<div class="page active" id="index">
+
+  <div class="hero">
+    <h1>Serenity‑A <span>·</span> A股供应链卡点逆向分析引擎</h1>
+    <p class="subtitle">将 Serenity(@aleabitoreddit) 的<strong>"从下游钱流出发、沿供应链逆向找卡点"</strong>方法论适配到 A 股市场。保留美股映射因子，融合 a-stock-data 实时数据引擎。</p>
+    <div class="hero-tags">
+      <span class="hero-tag accent">A 股</span>
+      <span class="hero-tag green">AI 供应链</span>
+      <span class="hero-tag green">光模块</span>
+      <span class="hero-tag">光芯片</span>
+      <span class="hero-tag">PCB</span>
+      <span class="hero-tag">机器人</span>
+      <span class="hero-tag gold">北向资金</span>
+      <span class="hero-tag gold">龙虎榜</span>
+      <span class="hero-tag">半导体</span>
+    </div>
+  </div>
+
+  <!-- KPI Dashboard -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="num">14</div>
+      <div class="label">卡点判据</div>
+      <div class="sub-label">命中越多信念越高</div>
+    </div>
+    <div class="kpi-card">
+      <div class="num">12</div>
+      <div class="label">红旗规则</div>
+      <div class="sub-label">命中即降级/否决</div>
+    </div>
+    <div class="kpi-card">
+      <div class="num">9</div>
+      <div class="label">美股锚点</div>
+      <div class="sub-label">NVDA→AVGO→TSLA</div>
+    </div>
+    <div class="kpi-card">
+      <div class="num">15</div>
+      <div class="label">数据函数</div>
+      <div class="sub-label">a-stock-data 引擎</div>
+    </div>
+    <div class="kpi-card">
+      <div class="num">12</div>
+      <div class="label">分析步骤</div>
+      <div class="sub-label">全流程闭环</div>
+    </div>
+  </div>
+
+  <h2>核心理念</h2>
+  <blockquote style="border-left:3px solid var(--accent);padding:16px 20px;margin:16px 0 24px;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;color:var(--text2);font-style:italic;font-size:16px;">
+    "不是买铲子，是<strong style="color:var(--accent);">卡住卖铲人</strong>。"
+  </blockquote>
+
+  <div class="col2">
+    <div>
+      <h3 style="margin-top:0;">继承自 Serenity 的方法论</h3>
+      <ul style="padding-left:20px;margin:8px 0;">
+        <li>从下游需求冲击出发，沿供应链 DAG 向上游推演</li>
+        <li>找"市值最小、却卡住最大瓶颈、市场未定价"的环节</li>
+        <li>14 条好卡点判据 + 10 项红旗扫描</li>
+        <li>Bear / Base / Bull 三档估值框架</li>
+        <li>结论先行 + 判断显形 + 证伪门</li>
+        <li>独立 reviewer 强制复核</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-top:0;">适配 A 股的关键变更</h3>
+      <ul style="padding-left:20px;margin:8px 0;">
+        <li>数据底座切换为 a-stock-data（腾讯/mootdx/东财/同花顺）</li>
+        <li><strong>移除</strong> "中国敞口原则排除"（A 股不适用）</li>
+        <li><strong>新增</strong> 美股→A 股映射分析模块</li>
+        <li><strong>新增</strong> 北向/解禁/龙虎榜/两融等 A 股维度</li>
+        <li>保留美股涨跌对 A 股映射标的的传导分析</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>核心立场</h2>
+  <div class="steps">
+    <div class="step-item">
+      <h4>把市场当物理系统，不当代码列表</h4>
+      <p>不先看K线、不先问"这票能不能买"；先问"这层链上谁是单点失效"。K线是结果，供应链结构是原因。</p>
+    </div>
+    <div class="step-item">
+      <h4>别问"能不能买"，问"该查哪一层"</h4>
+      <p>前者等答案，后者建立判断。如果整条链的瓶颈在衬底，盯成品公司没有意义。</p>
+    </div>
+    <div class="step-item">
+      <h4>AI 是苦力不是军师</h4>
+      <p>让它拆供应链、顺供应商的供应商、横读财报和公告，把"产能打满/认证将结束/明年放量"拼成图。</p>
+    </div>
+    <div class="step-item">
+      <h4>Alpha = 信息合成的时间差</h4>
+      <p>在 AI capex 大叙事里沿供应链逆向找市场没定价的卡点。A 股的信息差比美股更大。</p>
+    </div>
+    <div class="step-item">
+      <h4>美股是先行指标，A 股是映射兑现</h4>
+      <p>美股 AI 龙头的 capex 指引和产品路线变化，会沿供应链依次传导到 A 股映射标的。</p>
+    </div>
+  </div>
+
+  <h2>快速导航</h2>
+  <div class="card-grid">
+    <div class="card" style="cursor:pointer;" onclick="showPage('framework')">
+      <div class="card-icon">🎯</div>
+      <h4>方法论框架</h4>
+      <p>14 条好卡点判据、12 条红旗扫描、三类估值框架</p>
+      <span class="tag tag-info">判据 &middot; 红旗 &middot; 估值</span>
+    </div>
+    <div class="card" style="cursor:pointer;" onclick="showPage('mapping')">
+      <div class="card-icon">🔗</div>
+      <h4>美股→A股映射</h4>
+      <p>NVDA/AVGO/TSLA 等锚点与 A 股映射标的分析</p>
+      <span class="tag tag-info">情绪 &middot; 估值 &middot; 订单</span>
+    </div>
+    <div class="card" style="cursor:pointer;" onclick="showPage('pipeline')">
+      <div class="card-icon">⚙️</div>
+      <h4>12 步分析流水线</h4>
+      <p>从 Scope Gate 到独立复核的完整分析流程</p>
+      <span class="tag tag-info">全流程</span>
+    </div>
+    <div class="card" style="cursor:pointer;" onclick="showPage('a-dims')">
+      <div class="card-icon">🇨🇳</div>
+      <h4>A 股特殊维度</h4>
+      <p>北向资金、限售解禁、龙虎榜、融资融券等</p>
+      <span class="tag tag-info">A股特有因子</span>
+    </div>
+    <div class="card" style="cursor:pointer;" onclick="showPage('reports')">
+      <div class="card-icon">📋</div>
+      <h4>报告标准</h4>
+      <p>单股11步报告、赛道7步报告、证据规则</p>
+      <span class="tag tag-info">输出规范</span>
+    </div>
+  </div>
+
+  <hr>
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <p><strong>不是投资建议。</strong>本框架仅用于学习研究分析方法论。不构成买卖建议，真金白银需自己 DYOR。所有项目均声明 NFA（Not Financial Advice）。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Serenity-A · 基于 Serenity(@aleabitoreddit) 供应链卡点逆向投资方法论 &amp; a-stock-data A股数据引擎构建<br>
+    仅用于学习研究，不构成投资建议
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

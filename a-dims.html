@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股特殊维度 · Serenity-A</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">Serenity‑A <span class="badge">v1.0</span></div>
+  <div class="navbar-links">
+    <a href="#" data-page="index">首页</a>
+    <a href="#" data-page="framework">方法论</a>
+    <a href="#" data-page="mapping">美股映射</a>
+    <a href="#" data-page="pipeline">流水线</a>
+    <a href="#" data-page="a-dims" class="active">A股维度</a>
+    <a href="#" data-page="reports">报告标准</a>
+  </div>
+  <button class="navbar-toggle">☰</button>
+</nav>
+
+<div class="page active" id="a-dims">
+  <div class="hero" style="padding-bottom:24px;margin-bottom:32px;">
+    <h1>A 股特殊分析维度</h1>
+    <p class="subtitle">美股没有的分析维度，新增适配 A 股市场的特有因子。北向资金、限售解禁、龙虎榜、融资融券——这些在 A 股的信号意义远强于美股。</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" style="border-color:var(--accent);">
+      <div style="font-size:22px;margin-bottom:4px;">🌊</div>
+      <h4>1. 北向资金</h4>
+      <span class="severity severity-hard" style="margin-bottom:8px;display:inline-block;">重要先行信号</span>
+      <p>外资流入/流出趋势是 A 股 AI 板块的重要先行信号。连续 N>5 日净流入 = 外资认可，反之亦然。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>数据源：</strong>同花顺北向（hgt 沪股通 + sgt 深股通分钟流向）<br>
+        <strong>信号：</strong>连续净流入 → 板块底；连续净流出 → 需警惕
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--red);">
+      <div style="font-size:22px;margin-bottom:4px;">🔒</div>
+      <h4>2. 限售解禁</h4>
+      <span class="severity severity-high" style="margin-bottom:8px;display:inline-block;">供给冲击风险</span>
+      <p>原始股/定增股解禁对股价有短期冲击。解禁比例 > 总股本 10% 且流动性差 → 显著压力。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>数据源：</strong>东财解禁日历<br>
+        <strong>关键判断：</strong>解禁≠立刻减持，需看股东性质（PE/实控人/员工持股计划）
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--gold);">
+      <div style="font-size:22px;margin-bottom:4px;">🐅</div>
+      <h4>3. 龙虎榜机构席位</h4>
+      <span class="severity severity-hard" style="margin-bottom:8px;display:inline-block;">上涨性质判断器</span>
+      <p>机构买入 vs 游资买入，决定上涨的持续性。机构主导 = 趋势性，游资主导 = 脉冲。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>数据源：</strong>东财龙虎榜席位<br>
+        <strong>规则：</strong>机构净买 > 游资 → 可跟；纯游资 → 短线品种
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--green);">
+      <div style="font-size:22px;margin-bottom:4px;">⚖️</div>
+      <h4>4. 融资融券</h4>
+      <span class="severity severity-mid" style="margin-bottom:8px;display:inline-block;">杠杆情绪温度计</span>
+      <p>融资余额趋势 = 杠杆资金情绪。融资余额持续上升 = 看多共识；融券激增 = 看空信号。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>数据源：</strong>东财两融数据中心<br>
+        <strong>注意：</strong>融资余额过高时也是反向指标（情绪过热）
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--gold);">
+      <div style="font-size:22px;margin-bottom:4px;">🛑</div>
+      <h4>5. 涨停板效应</h4>
+      <span class="severity severity-mid" style="margin-bottom:8px;display:inline-block;">A股特有现象</span>
+      <p>A 股 10%/20% 涨跌停限制会扭曲短期价格发现。连续涨停后的开板 = 短期情绪顶点。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>判断：</strong>龙头首次开板可能是机会；跟风股连续涨停后开板 → 危险<br>
+        <strong>红线：</strong>卡点≠短期交易信号，供应链卡点是 6-18 个月的结构性逻辑
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--accent);">
+      <div style="font-size:22px;margin-bottom:4px;">📜</div>
+      <h4>6. 政策驱动</h4>
+      <span class="severity severity-hard" style="margin-bottom:8px;display:inline-block;">A股最强催化</span>
+      <p>产业政策对 A 股板块的催化远强于美股。关键时点：两会/中央经济工作会议/工信部/科技部。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>A 股经典节奏：</strong>政策底 → 市场底 → 业绩底<br>
+        <strong>2026年关注：</strong>AI 政策/算力补贴/新质生产力
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--red);">
+      <div style="font-size:22px;margin-bottom:4px;">👤</div>
+      <h4>7. 大股东/管理层行为</h4>
+      <span class="severity severity-high" style="margin-bottom:8px;display:inline-block;">内部人信号</span>
+      <p>增持/回购/股权激励 = 信心信号。减持/质押 = 压力信号（需区分个人需求和公司经营）。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>红旗：</strong>实控人持续减持（无论什么理由）→ 最大红旗之一<br>
+        <strong>绿旗：</strong>高位增持+大额回购注销 → 真正有信心
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--purple);">
+      <div style="font-size:22px;margin-bottom:4px;">📊</div>
+      <h4>8. 筹码结构</h4>
+      <span class="severity severity-mid" style="margin-bottom:8px;display:inline-block;">聪明钱方向</span>
+      <p>股东户数连续下降 = 筹码从散到集。机构持股比例变化 = 聪明钱方向。</p>
+      <div style="background:var(--surface2);border-radius:6px;padding:10px;margin-top:8px;font-size:12px;">
+        <strong>数据源：</strong>东财股东户数<br>
+        <strong>判据：</strong>股东户数连续 3 季下降 + 机构增持 → 强烈信号
+      </div>
+    </div>
+  </div>
+
+  <h2>如何使用这些维度</h2>
+  <div class="callout callout-info">
+    <div class="callout-icon">📋</div>
+    <div class="callout-body">
+      <p><strong>单股分析中：</strong>在估值之后、催化剂之前插入 A 股特殊维度分析。量化信号（北向/融资/股东户数变化）优先于定性判断。</p>
+      <p><strong>赛道分析中：</strong>北向资金的整体流向比个股信号更可靠——看板块整体北向 vs 个股北向。</p>
+      <p><strong>综合判定时：</strong>这些维度用于修正信念档——北向持续流入可上提一档，巨额解禁在即下压一档。</p>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>不要过度解读短期信号。</strong>北向单日流出 / 涨停板打开 / 单日融资减少 都是噪音。关注趋势（3-5日/季度的方向），而不是单点。
+    </div>
+  </div>
+
+  <div class="footer">
+    Serenity-A · 仅用于学习研究，不构成投资建议
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
